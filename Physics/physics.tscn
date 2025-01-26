@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvkc78752nr85"]
+[gd_scene load_steps=5 format=3 uid="uid://dvkc78752nr85"]
 
 [ext_resource type="Script" path="res://Physics/player.gd" id="1_ocmx3"]
 [ext_resource type="Texture2D" uid="uid://cjhm2taei47ex" path="res://Physics/Assets/PhysicsCharacter.png" id="1_wf7on"]
-[ext_resource type="Texture2D" uid="uid://b5jj8w386imjn" path="res://Physics/Assets/Crate.png" id="3_gm30i"]
+[ext_resource type="PackedScene" uid="uid://d1nf1d04if3oo" path="res://Physics/crate.tscn" id="3_tlt2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq8dc"]
-size = Vector2(18, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngakd"]
 size = Vector2(18, 18)
 
 [node name="Main" type="Node2D"]
@@ -27,13 +24,28 @@ shape = SubResource("RectangleShape2D_vq8dc")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="Crate" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="Crate" parent="." instance=ExtResource("3_tlt2t")]
 
-[node name="Crate2" type="Sprite2D" parent="Crate"]
-position = Vector2(-62, -38)
-texture = ExtResource("3_gm30i")
+[node name="Crate2" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(-120, -55)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-position = Vector2(-62, -38)
-shape = SubResource("RectangleShape2D_ngakd")
+[node name="Crate3" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(229, 109)
+
+[node name="Crate4" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(119, -13)
+
+[node name="Crate5" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(197, 9)
+
+[node name="Crate6" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(-80, 50)
+
+[node name="Crate7" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(40, 108)
+
+[node name="Crate8" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(124, 119)
+
+[node name="Crate9" parent="." instance=ExtResource("3_tlt2t")]
+position = Vector2(-47, 123)
